@@ -34,9 +34,11 @@ async function handleEvent(event) {
     return Promise.resolve(null);
   }
 
+  console.log(event)
+
   return client.replyMessage(event.replyToken, {
     type: 'text',
-    text: event //実際に返信の言葉を入れる箇所
+    text: event.message.text //実際に返信の言葉を入れる箇所
   });
 }
 
